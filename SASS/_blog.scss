@@ -1,0 +1,50 @@
+/* BLOG */
+article{
+    a{
+        color:inherit;
+        display: inline-block;
+    }
+    h2{
+        font-size: 1.2rem; 
+        margin:10px 0 0 0;
+        text-align: left;
+     }
+     h2:before, h2:after{
+         content:'';
+         display: none;
+     }
+     h2 a:hover{
+         color:$jaune;
+     }
+     .date, .author{
+         font-size: .8rem;
+     }
+     .btViewArticle{
+         display: none;
+     }
+     .separator{
+         display: block;
+         width: 60px;
+         height: 3px;
+         background-color: $jaune;
+         margin:10px 0;
+     }
+     .comments{
+         border-left: 1px solid $texteColor;
+         padding-left: 5px;
+         font-size: .8rem;
+     }
+     .commentPicto{
+         margin-right: 5px;
+     }
+     hr{
+         display: block;
+         margin:60px 0;
+     }
+}
+.titre{
+    padding:60px 0; 
+    h1{
+        margin:0;
+    }
+}

@@ -1,0 +1,19 @@
+form.search{
+    display: flex;
+    border:1px solid $texteColor;
+    input{
+        flex: auto;
+        border:none;
+        padding:.5rem;
+    }
+    button{
+        flex: initial;
+        background-color: $jaune;
+        border-radius: 0;
+        color:#fff;
+        padding: 0.5rem;
+        img{
+            width: 24px;
+        }
+    }
+}

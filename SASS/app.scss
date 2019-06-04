@@ -1,0 +1,120 @@
+@import 'vars';
+@import 'header';
+@import 'navigation';
+@import 'etiquettes';
+@import 'breadcrump';
+@import 'searchform';
+@import 'footer';
+
+/* Components */
+@import './components/form';
+@import './components/realisations';
+@import './components/comments';
+@import './components/newsletterForm';
+
+/* Global */
+*{
+    outline: none;
+}
+.row{
+    max-width: 1200px;
+}
+.full {
+    max-width: 100%;
+}
+body{
+    font-family: $typoLato;
+    color: $texteColor;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: $typoOswald;
+    color: $titreColor;
+}
+.titrePage{
+    display: inline;
+}
+.titrePage{
+    font-size: 2rem;
+    padding:1rem;
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+    h1{
+        display: inline;
+        position: relative;
+        font-size: 2rem;
+    }
+    h1 b{
+        font-size: 2.2rem;
+        color:$bleu;
+        text-transform: uppercase;
+    }
+}
+
+section{
+    padding-bottom: 60px;
+    h2{
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        // color:inherit;
+    }
+    h2:before{
+        content:'';
+        width: 60px;
+        height: 15px;
+        margin: 60px auto 10px auto;
+        border-width: 5px 5px 0 5px;
+        border-color: $jaune;
+        border-style: solid;
+    }
+    h2:after{
+        content:'';
+        width: 60px;
+        height: 5px;
+        margin: 10px auto 60px auto;
+        background-color: $jaune;
+    }
+}
+
+/* Class */
+.bgBleu{
+    background-color: $bleu;
+    color:#fff;
+    border-radius:8px;
+    padding:0 5px;
+}
+.bgJaune{
+    @extend .bgBleu;
+    background-color: $jaune;
+}
+.texteBleu{
+    color:$bleu;
+}
+a.bt{
+    background-color: $titreColor;
+    color:#fff;
+    padding:1rem;
+    transition: .3s;
+    text-transform: uppercase;
+    display: inline-block;
+}
+a.bt:hover{
+    background-color: $jaune;
+}
+a.btBgJaune{
+    background-color:$jaune;
+}
+a.btBgJaune:hover{
+    background-color: $titreColor;
+}
+
+/* HOME */
+@import 'home';
+
+/* BLOG */
+@import 'blog';
+
+/* WIDGETS */
+@import 'widget';

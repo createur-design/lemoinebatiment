@@ -1,0 +1,35 @@
+.comments{
+    padding-left:1rem!important;
+    li{
+        list-style: none;
+        .comment-author{
+            display: flex;
+            align-items: flex-end;
+            img{
+                width: 60px;
+                height: 60px;
+                overflow: hidden;
+                border-radius: 50%;
+            }
+            .says{
+                display: none;
+            }
+        }
+    }
+    .reply{
+        a{
+            @extend a.bt;
+            padding: .25rem!important;
+            font-size: .8rem;
+            margin-bottom: 1rem;
+        }
+    }
+    .comment-form-comment{
+        label{
+            display: block;
+        }
+        textarea{
+            resize: none;
+        }
+    }
+}
