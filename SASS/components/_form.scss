@@ -76,4 +76,7 @@
        @extend a.bt;
        border:none;
     }
+    input[type="submit"]:hover{
+       cursor: pointer;
+    }
  }

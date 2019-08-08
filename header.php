@@ -23,7 +23,11 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				z-index:9999;
+				text-align:center;
+				z-index:9999;				
+			}
+			#loader p{
+				margin-top:50px;
 			}
 		</style>
 
@@ -33,7 +37,12 @@
 	<body <?php body_class(); ?>>
 
 			<div id="loader">
-				<p>page en cours de chargement...</p>
+				<div>
+					<div>
+						<img src="<?php echo get_template_directory_uri(); ?>/img/lemoine-batiment-logo.jpg" alt="Lemoine Bâtiment">		
+					</div>				
+					<p>page en cours de <b>chargement</b>...</p>
+				</div>				
 			</div>
 
 			<!-- header -->
@@ -42,6 +51,9 @@
 				<div class="row">
 					<div class="small-12 columns">
 						<div class="call">
+							<a href="https://www.facebook.com/laurentlemoinebatiment/" target="_blank">
+							<small>suivez-nous</small>
+							<img class="fb" src="<?php echo get_template_directory_uri(); ?>/img/pictos/facebook.png" alt="suivez-nous sur Facebook"></a>
 							<img src="<?php echo get_template_directory_uri(); ?>/img/pictos/call.png" alt=""><a href="tel:0321413915">03 21 41 39 15</a>
 						</div>						
 					</div>
@@ -63,7 +75,10 @@
 					<div class="small-12 medium-12 large-8 columns">
 						<!-- nav -->
 						<nav class="nav" role="navigation">
-							<div class="bt-menu"><span class="ion-navicon"></span>NAVIGATION</div>
+							<div class="bt-menu">
+								<img class="fb" src="<?php echo get_template_directory_uri(); ?>/img/pictos/order.png" alt="burger menu">	
+								MENU
+							</div>
 							<?php wp_nav_menu(array('menu_id' => 'menu')); ?>
 						</nav>
 						<!-- /nav -->

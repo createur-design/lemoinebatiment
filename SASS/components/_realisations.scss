@@ -1,9 +1,14 @@
 #filter_gallery_126{
     margin-bottom:1rem;
+    margin-left:0!important;
+    margin-right:0!important;
+    *{
+        box-sizing: border-box;
+    }
 }
 .simplefilter_126{
     display: flex;
-    margin-left:0;
+    // margin-left:0;
     li{
         border-radius:8px;
         padding: 0.5rem 1rem;

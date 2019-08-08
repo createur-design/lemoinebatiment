@@ -1,12 +1,12 @@
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 				<div class="row align-center">
-					<div class="small-12 medium-4 columns text-center">
+					<div class="small-12 medium-8 columns text-center">
 						<img
 							src="<?php echo get_template_directory_uri(); ?>/img/lemoine-batiment-logo-small.jpg" alt="Lemoine Bâtiment Logo"
 							class="logo-img smallLogo logoFooter"
 						>
-						<p>Spécialiste de la <b>Charpente</b> et de la <b>Couverture</b>.</p>
+						<p>Entreprise GÉNÉRALE DE BÂTIMENT, tous corps d’état.</p>
 					</div>
 				</div>
 				<div class="row">

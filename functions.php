@@ -86,7 +86,7 @@ function html5blank_nav()
 function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-        wp_register_script('appscripts', get_template_directory_uri() . '/js/scripts.min.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_register_script('appscripts', get_template_directory_uri() . '/js/scripts.min.js', array('jquery'), '1.0.0', true); // Custom scripts
         wp_enqueue_script('appscripts'); // Enqueue it!
     }
 }
@@ -99,7 +99,18 @@ function html5blank_conditional_scripts()
         wp_enqueue_script('owl'); // Enqueue it!
 
         wp_register_script('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js', array('jquery'), '1.0.0'); // Conditional script(s)
-        wp_enqueue_script('fancybox'); // Enqueue it!
+        wp_enqueue_script('fancybox'); // Enqueue it!        
+    }
+
+    elseif (is_page(35)) {
+        wp_register_script('jquery2', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js', array('jquery'), '1.0.0'); // Conditional script(s)
+        wp_enqueue_script('jquery2'); // Enqueue it!
+
+        wp_register_script('hammer', 'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js', array('jquery'), '1.0.0'); // Conditional script(s)
+        wp_enqueue_script('hammer'); // Enqueue it!
+
+        wp_register_script('imagesCompare', get_template_directory_uri() . '/js/images-compare.min.js' , array('jquery'), '1.0.0'); // Conditional script(s)
+        wp_enqueue_script('imagesCompare'); // Enqueue it!
     }
 }
 
@@ -124,6 +135,11 @@ function html5blank_styles()
 
         wp_register_style('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css', array(), '1.0', 'all');
         wp_enqueue_style('fancybox'); // Enqueue it! 
+    }
+
+    elseif (is_page(35)){        
+        wp_register_style('imagesCompare', get_template_directory_uri() . '/css/images-compare.min.css', array(), '1.0', 'all');
+        wp_enqueue_style('imagesCompare'); // Enqueue it! 
     }
 }
 
@@ -498,7 +514,7 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 }
 
 
-add_filter( 'show_admin_bar', '__return_true' );
+// add_filter( 'show_admin_bar', '__return_true' );
 
 
 /*Contact form 7 remove span*/

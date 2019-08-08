@@ -42,6 +42,20 @@
 				$(".owl-item.active a").addClass("anime");
 			}
 
+			$(".owlAvis").owlCarousel({
+				items:1,
+				loop:true,
+				autoplay:true,
+				autoplayTimeout: 7000,
+				animateIn: 'fadeIn',
+				animateOut: 'fadeOut',
+				// onInitialized: animeTxt,
+				// onTranslated: animeTxt,
+				// onChanged: animeTxt,
+				dots:false,
+				nav:false
+			});
+
 			$(".carouselBlog").owlCarousel({
 				dots: true,
 				margin: 10,
@@ -62,6 +76,12 @@
 					}
 				}
 			});
+		}
+
+		//page realisations
+		if($("body").hasClass("nos-realisations")){
+			console.log('page réalisations !');
+			$('#myImageCompare').imagesCompare();
 		}
 
 		// CONTACT

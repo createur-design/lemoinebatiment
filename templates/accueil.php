@@ -1,13 +1,13 @@
 <div class="row full">
     <div class="small-12 columns">
         <div class="titrePage">
-            <h1>Spécialiste de la <b class=''>charpente</b> et de la <b class=''>couverture</b></h1>
+            <?php echo the_field('titre_et_intro') ?>
         </div>        
     </div>
 </div>
 
-<div class="row full align-right collapse">
-    <div class="small-12 medium-10 columns">
+<div class="row full collapse">
+    <div class="small-12 columns">
         <?php if( have_rows('slider') ): ?>
 
             <div class="owl-carousel heroSlider">
@@ -19,7 +19,7 @@
                 $stitre = get_sub_field('sous-titre');
                 $description = get_sub_field('description');
                 $bouton = get_sub_field('bouton');
-                $link = get_sub_field('link');
+                $link = get_sub_field('lien');
                 $image = get_sub_field('image');
 
                 ?>
@@ -51,63 +51,42 @@
 <section class="services">
     <div class="row">
         <div class="small-12 columns text-center">
-            <h2>nos services</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et sit dignissimos in temporibus provident voluptatum eius sapiente ut nemo ad illo, quae ratione eos assumenda culpa. Fuga culpa modi mollitia!</p>
+            <?php echo the_field('titre_et_description') ?>
         </div>
     </div>
-    <div class="row small-up-1 medium-up-3">
-        <div class="column column-block">
-            <div class="blockService">
-                <a href="<?php echo get_page_link(19); ?>">
-                    <div class="icon"><img src="<?php echo get_template_directory_uri(); ?>/img/pictos/hammer.svg" alt=""></div>
-                    <h3>charpente</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </a>
-            </div>            
+    <?php if( have_rows('categories_services') ): ?>
+        <div class="row small-up-1 medium-up-3">
+            <?php while( have_rows('categories_services') ): the_row(); 
+            $titre = get_sub_field('titre');
+            $desc = get_sub_field('description');
+            $link = get_sub_field('lien');
+            $picto = get_sub_field('picto');
+            ?>
+            <div class="column column-block">
+                <div class="blockService">
+                    <a href="<?php echo $link ; ?>">
+                        <div class="icon"><img src="<?php echo $picto['url'] ?>" alt=""></div>
+                        <h3><?php echo $titre ?></h3>
+                        <p><?php echo $desc ; ?></p>
+                    </a>
+                </div>            
+            </div>
+            <?php endwhile; ?>
         </div>
-        <div class="column column-block">
-            <div class="blockService">
-                <a href="<?php echo get_page_link(21); ?>">
-                    <div class="icon"><img src="<?php echo get_template_directory_uri(); ?>/img/pictos/roof.svg" alt=""></div>
-                    <h3>couverture</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </a>
-            </div>            
-        </div>
-        <div class="column column-block">
-            <div class="blockService">
-                <a href="<?php echo get_page_link(23); ?>">
-                    <div class="icon"><img src="<?php echo get_template_directory_uri(); ?>/img/pictos/trowel.svg" alt=""></div>
-                    <h3>maçonnerie</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </a>
-            </div>            
-        </div>
-        <div class="column column-block">
-            <div class="blockService">
-                <div class="icon"><img src="<?php echo get_template_directory_uri(); ?>/img/pictos/saw.svg" alt=""></div>
-                <h3>menuiserie</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>            
-        </div>
-        <div class="column column-block">
-            <div class="blockService">
-            <div class="icon"><img src="<?php echo get_template_directory_uri(); ?>/img/pictos/plug.svg" alt=""></div>
-                <h3>électricité</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>            
-        </div>
-        <div class="column column-block">
-            <div class="blockService">
-                <div class="icon"><img src="<?php echo get_template_directory_uri(); ?>/img/pictos/cutter.svg" alt=""></div>
-                <h3>isolation</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>            
-        </div>
-    </div>
+    <?php endif; ?>
     <div class="row">
         <div class="small-12 columns text-center">
-            <a href="#" class="bt">plus de services</a>
+            <a href="<?php echo the_field('bouton_plus_de_services'); ?>" class="bt">plus de services</a>
+        </div>
+    </div>
+</section>
+<section class="atouts">
+    <div class="row">
+        <div class="small-12 columns">
+            <h2>nos atouts</h2>
+            <div class="atoutMessage">
+                <?php echo the_field('atouts') ; ?>
+            </div>          
         </div>
     </div>
 </section>
@@ -128,7 +107,7 @@
         $image = get_sub_field('image');
         $cat = get_sub_field('categorie');
 
-        ?>
+    ?>
 
     <div class="small-6 medium-6 large-3 columns">
         <div class="block">
@@ -159,7 +138,30 @@
 </div>
 
 </section>
+<section class="avis">
+    <h2>nos clients témoignent</h2>
+    <div class="row align-center text-center">
+        <div class="small-12 medium-8 columns">
+            <?php if( have_rows('avis') ): ?>
+            <div class="owl-carousel owlAvis">
+                <?php while( have_rows('avis') ): the_row(); 
 
+                // vars
+                $nom = get_sub_field('nom');
+                $message = get_sub_field('message');
+
+                ?>
+                <div>
+                    <h3><?php echo $nom ; ?></h3>
+                    <?php echo $message ; ?>
+                </div>
+                <?php endwhile; ?>
+            </div>
+            <?php endif; ?>
+        </div>
+    </div>
+    
+</section>
 <section class="lastBlog">
     <div class="row">
         <div class="small-12 columns">

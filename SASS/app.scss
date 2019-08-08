@@ -9,8 +9,11 @@
 /* Components */
 @import './components/form';
 @import './components/realisations';
+@import './components/beforeAfter';
 @import './components/comments';
 @import './components/newsletterForm';
+
+@import './components/widgets';
 
 /* Global */
 *{
@@ -44,10 +47,13 @@ h1, h2, h3, h4, h5, h6{
         position: relative;
         font-size: 2rem;
     }
-    h1 b{
+    h1 b, h1 strong{
         font-size: 2.2rem;
         color:$bleu;
         text-transform: uppercase;
+    }
+    p{
+        font-size: 1rem;
     }
 }
 
@@ -91,6 +97,9 @@ section{
 }
 .texteBleu{
     color:$bleu;
+}
+.texteJaune{
+    color:$jaune;
 }
 a.bt{
     background-color: $titreColor;

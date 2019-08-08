@@ -89,6 +89,9 @@ section.services{
             text-transform: uppercase;
             font-size: 1.4rem;
         }
+        a{
+            color:inherit;
+        }
         text-align: center;
     }
     .blockServiceBleu{
@@ -96,6 +99,14 @@ section.services{
             background-color: $bleu;
             border-color: $bleu;
         }        
+    }
+}
+section.atouts{
+    .atoutMessage{
+        p strong:nth-child(1){
+            color:$bleu;
+            font-size: 1.2rem;
+        }
     }
 }
 section.realisations{
@@ -140,6 +151,32 @@ section.realisations{
         bottom:0;
     }
 }
+section.avis{
+    background-color: $jaune;
+    color:#fff;
+    h2:before{
+        border-color: #fff;
+    }
+    h2:after{
+        background-color: #fff;
+    }
+    h3{
+        color:inherit;
+        text-align: left;
+    }
+    .owlAvis:before{
+        content:'';
+        background-image: url('../img/pictos/right-quote.png');
+        display: inline-block;
+        width: 96px;
+        height: 96px;
+        background-size: cover;
+    }
+    .owlAvis>div{
+        transform: translateY(-50px);
+        text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+    }
+}
 section.lastBlog{
     .carouselBlog{
         .owl-dots{
@@ -163,7 +200,7 @@ section.lastBlog{
 
 @media(min-width:768px){
 body.accueil .titrePage{
-    transform: translateY(120%);
-    z-index: 10;
+    // transform: translateY(120%);
+    // z-index: 10;
 }
 }
